@@ -1,6 +1,7 @@
 import logo from './logo.svg';
 import './App.css';
 import PracticeIndexedDB from "./PracticeIndexedDB";
+import PracticeWebWorker from "./PracticeWebWorker";
 
 function App() {
   return (
@@ -10,7 +11,7 @@ function App() {
         <p>
           <code>ReactJS Advanced Practice 1</code>
         </p>
-        <PracticeIndexedDB/>
+          <PracticeWebWorker/>
       </header>
     </div>
   );
