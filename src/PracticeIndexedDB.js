@@ -1,7 +1,6 @@
-
-
+const testDB = 'testDB';
 export default function PracticeIndexedDB(){
-    let openDBRequest = indexedDB.open('testDB',1);
+    let openDBRequest = indexedDB.open(testDB,1);
 
     openDBRequest.onupgradeneeded = function (event){
         console.log("Upgraded needed")
@@ -20,5 +19,15 @@ export default function PracticeIndexedDB(){
 
     openDBRequest.onsuccess = function (){
         let db = openDBRequest.result;
+
+        db.onversionchange = function (){
+            db.close();
+            console.log('DB outdated, reload page')
+        }
+
+
     }
+
+    let deleteDBRequest = indexedDB.deleteDatabase(testDB);
+
 }
