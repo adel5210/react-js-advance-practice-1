@@ -66,6 +66,7 @@ export default function PracticeIndexedDB() {
         // stores.clear()
 
         let requestCursor = stores.openCursor();
+        // let requestCursor = stores.openCursor(1); //similar to get(1)
         requestCursor.onsuccess = function (){
             let cursor = requestCursor.result;
             if(cursor){
